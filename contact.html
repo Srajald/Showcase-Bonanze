@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Srajal Dwivedi</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-transition"></div>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="logo">SD</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="contact-page">
+        <section class="contact-hero">
+            <div class="contact-content fade-in">
+                <h1>Get In Touch</h1>
+                <p class="lead">Let's collaborate on something amazing</p>
+            </div>
+        </section>
+
+        <section class="contact-grid">
+            <div class="contact-info fade-in">
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>srajaldwivedi17@gmail.com</p>
+                    <a href="mailto:srajaldwivedi17@gmail.com" class="info-link">Send Email</a>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Bengaluru, Karnataka, India</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+91 7007525435</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Srajald" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/srajal-dwivedi" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:srajaldwivedi17@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form fade-in" id="contactForm">
+                <div class="form-group floating">
+                    <input type="text" id="name" class="form-input" required>
+                    <label for="name">Your Name</label>
+                    <div class="input-highlight"></div>
+                </div>
+
+                <div class="form-group floating">
+                    <input type="email" id="email" class="form-input" required>
+                    <label for="email">Your Email</label>
+                    <div class="input-highlight"></div>
+                </div>
+
+                <div class="form-group floating">
+                    <input type="text" id="subject" class="form-input" required>
+                    <label for="subject">Subject</label>
+                    <div class="input-highlight"></div>
+                </div>
+
+                <div class="form-group floating">
+                    <textarea id="message" class="form-input" rows="5" required></textarea>
+                    <label for="message">Your Message</label>
+                    <div class="input-highlight"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Send Message</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Success Modal -->
+        <div class="success-modal" id="successModal">
+            <div class="modal-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>Message Sent!</h3>
+                <p>Thank you for reaching out. I'll get back to you soon.</p>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html> 

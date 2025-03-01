@@ -1,0 +1,1269 @@
+/* Update existing root variables */
+:root {
+    --primary: #E8A1B3;
+    --secondary: #FFB5C8;
+    --accent: #DDA0AB;
+    --misty-rose: #FFE4E1;
+    --dark: #2D3436;
+    --light: #F9F5F6;
+    --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    --soft-gradient: linear-gradient(135deg, var(--misty-rose), white);
+}
+
+/* About Page Specific Styles */
+.about-page {
+    padding-top: 80px;
+    background: var(--light);
+    min-height: 100vh;
+}
+
+.about-hero {
+    position: relative;
+    padding: 6rem 0;
+    background: var(--gradient);
+    color: white;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, var(--primary) 0%, transparent 75%),
+        linear-gradient(-45deg, var(--secondary) 0%, transparent 75%);
+    opacity: 0.05;
+    animation: heroGradient 15s ease infinite;
+}
+
+.about-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, var(--misty-rose) 0%, transparent 100%);
+    opacity: 0.1;
+}
+
+.profile-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.profile-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        rgba(79, 70, 229, 0.05) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(79, 70, 229, 0.05) 50%,
+        rgba(79, 70, 229, 0.05) 75%,
+        transparent 75%
+    );
+    background-size: 60px 60px;
+    animation: gradientMove 30s linear infinite;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.profile-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: rotate(-5deg);
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 10px 30px rgba(219, 112, 147, 0.2),
+        0 0 0 10px var(--misty-rose);
+    animation: float 6s ease-in-out infinite;
+}
+
+.profile-image:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-backdrop {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient);
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: slideUp 0.8s ease forwards;
+}
+
+.title-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.title-tags span {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+/* Timeline Section */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--gradient);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+}
+
+.timeline-item:hover::before {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgba(79, 70, 229, 0.2);
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--gradient);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-content {
+    width: 45%;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.skill-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-level {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: var(--gradient);
+    width: 0;
+    transition: width 1s ease;
+}
+
+/* Interests Section */
+.interests-section {
+    padding: 6rem 2rem;
+    background: white;
+    position: relative;
+}
+
+.interests-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at top right, var(--misty-rose) 0%, transparent 60%),
+        radial-gradient(circle at bottom left, var(--misty-rose) 0%, transparent 60%);
+    opacity: 0.5;
+}
+
+.interests-section h2 {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.interest-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(219, 112, 147, 0.1);
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+.interest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(219, 112, 147, 0.1);
+    border-color: var(--primary);
+}
+
+.interest-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+}
+
+.interest-icon::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    padding: 6rem 2rem;
+    background: var(--misty-rose);
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, white 0%, transparent 100%);
+}
+
+.philosophy-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.philosophy-content h2 {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.philosophy-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 
+        0 10px 30px rgba(219, 112, 147, 0.1),
+        0 0 0 1px rgba(219, 112, 147, 0.05);
+}
+
+.philosophy-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(219, 112, 147, 0.15),
+        0 0 0 2px var(--primary);
+}
+
+.philosophy-card h3 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.philosophy-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+.philosophy-card p {
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Add scroll-triggered animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Text Content Styling */
+.about-text {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-intro p,
+.about-approach p,
+.about-mission p {
+    color: var(--text-dark);
+    opacity: 1;
+}
+
+.about-qualities {
+    margin: 2rem 0;
+}
+
+.about-qualities h3,
+.about-approach h3,
+.about-mission h3 {
+    color: var(--primary);
+    opacity: 1;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.about-qualities ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-qualities li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.8rem;
+}
+
+.about-qualities li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+}
+
+.about-approach,
+.about-mission {
+    margin: 2rem 0;
+}
+
+/* Image Section Styling */
+.about-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-connect {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.about-connect h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    color: var(--primary);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* Add profile bio styles */
+.profile-bio {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 2rem;
+    max-width: 600px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+
+    .about-intro p {
+        font-size: 1.1rem;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .profile-info h1 {
+        font-size: 2.5rem;
+    }
+
+    .profile-bio {
+        margin: 2rem auto 0;
+    }
+
+    .interests-section,
+    .philosophy-section {
+        padding: 4rem 1.5rem;
+    }
+}
+
+/* About Me Section */
+.about-me-section {
+    padding: 6rem 2rem;
+    background: var(--soft-gradient);
+    position: relative;
+}
+
+.about-me-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient);
+    opacity: 0.3;
+}
+
+.about-me-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me-section h2 {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-me-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+.about-me-text {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 30px rgba(219, 112, 147, 0.1),
+        0 0 0 1px rgba(219, 112, 147, 0.05);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.about-me-text:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 20px 40px rgba(219, 112, 147, 0.15),
+        0 0 0 2px var(--primary);
+}
+
+.about-me-text p {
+    color: var(--dark);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-me-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .about-me-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .about-me-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-me-text {
+        padding: 1.5rem;
+    }
+
+    .about-me-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+/* Add floating animation for cards */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Add wave animation */
+@keyframes wave {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+}
+
+/* Personal Section Styles */
+.personal-section {
+    padding: 6rem 2rem;
+    background: var(--light);
+    position: relative;
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hobby-card {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(232, 161, 179, 0.1);
+    animation: float 6s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(232, 161, 179, 0.1);
+}
+
+.hobby-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.favorite-list {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(232, 161, 179, 0.2);
+}
+
+.favorite-list ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.favorite-list li {
+    display: inline-block;
+    margin: 0.3rem;
+    padding: 0.5rem 1rem;
+    background: var(--misty-rose);
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+/* Card-specific styles */
+.hobby-card:nth-child(1) {
+    background: linear-gradient(135deg, white, var(--misty-rose));
+}
+
+.hobby-card:nth-child(2) {
+    background: linear-gradient(135deg, var(--misty-rose), white);
+}
+
+.hobby-card:nth-child(3) {
+    background: linear-gradient(135deg, white, var(--misty-rose));
+}
+
+/* Hover effects */
+.hobby-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(232, 161, 179, 0.2),
+        0 0 0 2px var(--primary);
+}
+
+.hobby-card .favorite-list li:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 161, 179, 0.3);
+}
+
+/* Card animations */
+.hobby-card:nth-child(1) .hobby-icon i {
+    animation: pageFlip 3s ease-in-out infinite;
+}
+
+.hobby-card:nth-child(2) .hobby-icon i {
+    animation: strum 2s ease-in-out infinite;
+}
+
+.hobby-card:nth-child(3) .hobby-icon i {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes pageFlip {
+    0%, 100% { transform: rotateY(0deg); }
+    50% { transform: rotateY(180deg); }
+}
+
+@keyframes strum {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+/* Section title styles */
+.personal-section h2 {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.personal-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+/* Fun Facts Section */
+.fun-facts-section {
+    padding: 6rem 2rem;
+    background: var(--soft-gradient);
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.fact-card:hover {
+    transform: scale(1.05);
+}
+
+.fact-emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 20px rgba(232, 161, 179, 0.3);
+}
+
+.fact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+                rgba(232, 161, 179, 0.1) 0%,
+                rgba(255, 228, 225, 0.1) 100%);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.fact-card:hover::before {
+    transform: translateY(0);
+}
+
+/* Quotes Section */
+.quotes-section {
+    padding: 6rem 2rem;
+    background: var(--light);
+}
+
+.quote-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(232, 161, 179, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 12rem;
+    color: var(--misty-rose);
+    font-family: serif;
+    opacity: 0.5;
+    line-height: 1;
+}
+
+.quote-card blockquote {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.quote-card cite {
+    color: var(--primary);
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hobby-card {
+        padding: 2rem;
+    }
+    
+    .hobby-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .favorite-list li {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Add sparkle effect to profile image */
+.profile-image::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    right: -10px;
+    top: -10px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.8);
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.5); opacity: 1; }
+}
+
+/* Enhanced hobby cards */
+.hobby-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.hobby-card:hover::after {
+    opacity: 1;
+}
+
+/* Enhanced fun facts section */
+.fact-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.fact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+                rgba(232, 161, 179, 0.1) 0%,
+                rgba(255, 228, 225, 0.1) 100%);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.fact-card:hover::before {
+    transform: translateY(0);
+}
+
+/* Enhanced quote section */
+.quote-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 12rem;
+    color: var(--misty-rose);
+    font-family: serif;
+    opacity: 0.5;
+    line-height: 1;
+}
+
+/* Add this script to your about.js */
+
+/* Enhanced About Page Animations */
+
+/* Profile section animation */
+.profile-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        rgba(79, 70, 229, 0.05) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(79, 70, 229, 0.05) 50%,
+        rgba(79, 70, 229, 0.05) 75%,
+        transparent 75%
+    );
+    background-size: 60px 60px;
+    animation: gradientMove 30s linear infinite;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Profile image enhancements */
+.profile-image {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.profile-image::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: shadowPulse 6s ease-in-out infinite;
+}
+
+/* Section headers animation */
+.section-title {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    animation: expandWidth 1s ease-out forwards;
+}
+
+/* Skill tags animation */
+.skill-tag {
+    animation: fadeInUp 0.5s ease-out backwards;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+/* Staggered animation for skill tags */
+.skill-tag:nth-child(1) { animation-delay: 0.1s; }
+.skill-tag:nth-child(2) { animation-delay: 0.2s; }
+.skill-tag:nth-child(3) { animation-delay: 0.3s; }
+.skill-tag:nth-child(4) { animation-delay: 0.4s; }
+
+/* Enhanced text sections */
+.about-text p {
+    position: relative;
+    animation: slideInFromBottom 0.6s ease-out backwards;
+    padding-left: 1rem;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.about-text p:hover {
+    border-left-color: var(--primary);
+    background: rgba(79, 70, 229, 0.05);
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Education/Experience cards enhancement */
+.timeline-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+}
+
+.timeline-item:hover::before {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgba(79, 70, 229, 0.2);
+}
+
+/* Animated background cards */
+.background-cards {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bg-card {
+    position: absolute;
+    background: rgba(79, 70, 229, 0.05);
+    border-radius: 20px;
+    animation: float 8s infinite ease-in-out;
+}
+
+.bg-card:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.bg-card:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    left: 5%;
+    animation-delay: 1s;
+}
+
+/* New animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandWidth {
+    from { width: 0; }
+    to { width: 60px; }
+}
+
+@keyframes shadowPulse {
+    0%, 100% { opacity: 0.3; transform: translateX(-50%) scale(1); }
+    50% { opacity: 0.2; transform: translateX(-50%) scale(0.8); }
+}
+
+@keyframes gradientMove {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Hover effect for links */
+.about-links a {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.about-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+} 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Srajal Dwivedi</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-transition"></div>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="logo">SD</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="projects-page">
+        <section class="projects-hero">
+            <div class="projects-content fade-in">
+                <h1>Featured Projects</h1>
+                <p class="lead">A showcase of my best work and technical achievements</p>
+            </div>
+        </section>
+
+        <section class="projects-filter">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+            </div>
+        </section>
+
+        <section class="projects-grid">
+            <!-- LapTrack Project Card -->
+            <article class="project-card fade-in" data-category="mobile">
+                <div class="project-image">
+                    <img src="images/LapTrack.png" alt="LapTrack iOS App">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://drive.google.com/drive/folders/1J46fu9X7V3bqvPfCO8m-BhAyI1a8Prh7?usp=sharing" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>LapTrack</h3>
+                    <p class="project-subtitle">iOS Application</p>
+                    <div class="project-details">
+                        <ul>
+                            <li>Developed a fully functional iOS application, LapTrack, using Swift and Xcode, integrating CoreML for backend data processing.</li>
+                            <li>Designed an intuitive UI with optimized performance for a seamless user experience.</li>
+                            <li>Implemented an ML model to efficiently store and manage data, ensuring fast and accurate predictions.</li>
+                            <li>Optimized the Model using Random-Forest, XGBoost Regressor and Column Transformers followed by Pipeline.</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Swift</span>
+                        <span>Xcode</span>
+                        <span>CoreML</span>
+                        <span>ML Model</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/Srajald/LapTrack/tree/master" class="source-code-link" target="_blank">Source Code <i class="fas fa-code"></i></a>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Harvest.AI Project Card -->
+            <article class="project-card fade-in" data-category="ml">
+                <div class="project-image">
+                    <img src="images/Harvest.png" alt="Harvest.AI Platform">
+                </div>
+                <div class="project-content">
+                    <h3>Harvest.AI</h3>
+                    <p class="project-subtitle">AI-Powered Agricultural Platform</p>
+                    <div class="project-details">
+                        <ul>
+                            <li>Spearheaded the development of an AI-powered agricultural platform to tackle critical challenges such as extreme temperatures, water scarcity, and nutrient-deficient sandy soil, driving improved crop yield and resource efficiency.</li>
+                            <li>Engineered a seamless integration of cutting-edge AI/ML models with an intuitive user interface, leveraging ChatGPT-4 Plugins via REST API for enhanced user interaction and intelligent decision-making.</li>
+                            <li>Designed and deployed scalable AI-driven solutions for precision farming, optimizing irrigation, fertilization, and climate adaptation strategies to promote sustainable agriculture through data-driven insights.</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>AI/ML</span>
+                        <span>TypeScript</span>
+                        <span>Next.js</span>
+                        <span>Recoil</span>
+                        <span>RapidAPI</span>
+                        <span>LightGBM</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/aditya-kumar-25/Harvest.AI" class="source-code-link">Source Code <i class="fas fa-code"></i></a>
+                        <a href="https://harvest-ai-web.vercel.app/home" class="live-demo-link">View Live <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.notion.so/Harvest-AI-91e49670fee9428b80eab7e6fa58ee19?pvs=4&cookie_sync_completed=true" class="docs-link">Documentation <i class="fas fa-book"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Semantic Segmentation Project Card -->
+            <article class="project-card fade-in" data-category="ml">
+                <div class="project-image">
+                    <img src="images/medical.jpg" alt="Semantic Segmentation Project">
+                </div>
+                <div class="project-content">
+                    <h3>Semantic Segmentation of Gastric Polyps</h3>
+                    <p class="project-subtitle">Medical Image Analysis</p>
+                    <div class="project-details">
+                        <ul>
+                            <li>Developed an AI-driven diagnostic tool for the early detection and segmentation of gastric polyps in endoscopic images, aiding in the timely identification of potentially cancerous growths.</li>
+                            <li>Created a comprehensive dataset by generating annotated files, bounding boxes, and pixel-wise segmentation masks, ensuring precise detection and classification of polyps.</li>
+                            <li>Implemented a DeepLabV3+ model with a MobileNetV2 encoder, leveraging Dilated Spatial Pyramid Pooling (ASPP) to capture multi-scale contextual information for accurate segmentation.</li>
+                            <li>Preprocessed endoscopic images through contrast enhancement, noise reduction, and normalization to improve model performance and enhance feature extraction.</li>
+                            <li>Designed a lightweight yet powerful model, optimizing computational efficiency for real-time inference in medical imaging applications, enabling faster and more accurate diagnoses.</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>MobileNetV2</span>
+                        <span>DeepLabV3+</span>
+                        <span>PyTorch</span>
+                        <span>OpenCV</span>
+                        <span>Medical Imaging</span>
+                        <span>Deep Learning</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://drive.google.com/drive/folders/1b4bOxjHqWjxXm1x6hUkdIPcncnM9y4A3?usp=sharing" class="source-code-link" target="_blank">Source Code <i class="fas fa-code"></i></a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Case Study Modal -->
+        <div class="case-study-modal" id="caseStudyModal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="case-study-content">
+                    <!-- Content will be dynamically inserted -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html> 

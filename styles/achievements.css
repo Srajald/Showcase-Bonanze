@@ -1,0 +1,1078 @@
+:root {
+    --primary: #F08080;
+    --primary-light: #FFB6C1;
+    --secondary: #E6E6FA;
+    --secondary-light: #F8F8FF;
+    --accent: #FF4D67;          /* Darker pink */
+    --light-pink: #FFE4E8;      /* Slightly darker background */
+    --dark: #1A1A1A;            /* Almost black for text */
+    --light: #FFF5F5;
+    --text-primary: #4A4A4A;
+    --text-secondary: #6B6B6B;
+    --text-dark: #2D3436;       /* Main text color from skills */
+    --text-medium: #636E72;     /* Secondary text color */
+    --text-light: #B2BEC3;      /* Light text color */
+    --bg-light: #F8F9FA;        /* Light background */
+    --card-bg: #FFFFFF;
+    --gradient: linear-gradient(135deg, var(--primary), var(--primary-light));
+    --card-shadow: 0 8px 20px rgba(240, 128, 128, 0.1);
+    --dark-text: #1A1A1A;      /* Almost black for main text */
+    --header-bg: #2D3436;      /* Dark background for headers */
+    --tag-bg: #E85A5A;        /* Primary color for tags */
+    --border-color: #E1E1E1;   /* Subtle border color */
+    --border-light: rgba(240, 128, 128, 0.15);
+}
+
+.achievements-page {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--secondary-light);
+}
+
+.page-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-align: center;
+    position: relative;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid #CD5C5C;
+    width: max-content;
+    margin: 0 auto 3rem auto;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #CD5C5C;
+    border-radius: 2px;
+    transform: none;
+}
+
+.section-container {
+    margin-bottom: 4rem;
+    opacity: 1;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient);
+    transition: width 0.3s ease;
+}
+
+.section-title:hover::after {
+    width: 100px;
+}
+
+.subsection-title {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    margin: 2rem 0 1rem;
+    padding-left: 1rem;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 0.8rem;
+}
+
+/* Certification section specific styles */
+.certifications .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+}
+
+/* Common card styles with research card design */
+.achievement-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary);
+    width: 100%;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Card header styling */
+.card-header {
+    background: var(--gradient);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.card-header i {
+    color: white;
+    font-size: 1.6rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-header h3 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Card body styling */
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    border-top: 1px solid rgba(240, 128, 128, 0.1);
+    gap: 0.8rem;
+}
+
+/* Adjust content spacing */
+.card-body > div {
+    margin-bottom: 1.2rem;
+}
+
+.card-body > div:last-child {
+    margin-bottom: 0;
+}
+
+/* Text styling */
+.description {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--secondary);
+    border-radius: 8px;
+    border: 1px solid rgba(240, 128, 128, 0.1);
+}
+
+.issuer {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0.6rem 1rem;
+    padding: 0.6rem 1rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    display: inline-block;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 0.8rem;
+}
+
+.date {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    display: inline-block;
+    margin: 0.4rem 0;
+    border-left: 4px solid var(--primary);
+}
+
+.credential {
+    color: var(--text-primary);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.8rem 1rem;
+    background: var(--secondary);
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 3px solid var(--primary);
+    display: block;
+    position: relative;
+    background: linear-gradient(
+        120deg,
+        var(--secondary),
+        var(--secondary-light)
+    );
+    box-shadow: 0 2px 10px rgba(240, 128, 128, 0.1);
+    transition: all 0.3s ease;
+}
+
+.credential:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(240, 128, 128, 0.15);
+}
+
+/* Tags styling */
+.tags {
+    margin-top: auto;
+    padding: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background: var(--secondary-light);
+    border-radius: 8px;
+}
+
+.tags span {
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    background: var(--primary);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(240, 128, 128, 0.2);
+}
+
+/* Hover effects */
+.achievement-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 15px 30px rgba(240, 128, 128, 0.15),
+        0 0 0 1px rgba(240, 128, 128, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 240, 245, 1));
+}
+
+.tags span:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(240, 128, 128, 0.3);
+}
+
+/* Common verify button styles for all sections */
+.verify-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--gradient);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto;  /* Push button to bottom */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.verify-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240, 128, 128, 0.2);
+}
+
+/* Adjust card body to accommodate button */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+}
+
+/* Add margin before verify button */
+.card-body > *:last-child {
+    margin-top: auto;
+    padding-top: 0.8rem;
+}
+
+/* Section-specific button styles */
+.research .verify-btn,
+.hackathons .verify-btn,
+.training .verify-btn {
+    background: var(--gradient);
+    margin-top: 0.8rem;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGradient {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+@keyframes expandWidth {
+    to {
+        width: 60%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .cards-container,
+    .certifications .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container,
+    .certifications .cards-container {
+        grid-template-columns: 1fr;
+        padding: 1rem 0.5rem;
+    }
+    
+    .card-header {
+        padding: 1rem 1.2rem;
+    }
+    
+    .card-body {
+        padding: 1.2rem;
+    }
+    
+    .verify-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Additional styles for research cards */
+.research .achievement-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 240, 245, 0.98));
+    border: 1px solid rgba(240, 128, 128, 0.2);
+}
+
+.research .description {
+    color: var(--dark);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    font-weight: 500;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: 1px solid rgba(240, 128, 128, 0.1);
+}
+
+.research .date {
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--light-pink);
+    border-radius: 15px;
+}
+
+.research .credential {
+    display: block;
+    color: var(--dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: monospace;
+    margin: 0.8rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--light-pink);
+    border-radius: 8px;
+    border: 1px dashed var(--primary);
+}
+
+/* Add a subtle divider */
+.research .card-body {
+    position: relative;
+    padding-top: 0.5rem;
+}
+
+.research .card-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.5rem;
+    right: -1.5rem;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(240, 128, 128, 0.2),
+        transparent
+    );
+}
+
+/* Make research card hover state more prominent */
+.research .achievement-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 15px 30px rgba(240, 128, 128, 0.15),
+        0 0 0 1px rgba(240, 128, 128, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 240, 245, 1));
+}
+
+.highlight {
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+/* Training section styles */
+.training .achievement-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 245, 0.95));
+}
+
+/* Section-specific styles */
+.certifications .achievement-card,
+.training .achievement-card,
+.research .achievement-card,
+.hackathons .achievement-card {
+    border-left: 4px solid var(--primary);
+}
+
+/* Add subtle divider between sections */
+.card-body > *:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Enhanced text visibility for certification cards */
+.certifications .card-body {
+    padding: 2rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Make issuer (Udemy) more prominent */
+.certifications .issuer {
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0.8rem 1.2rem;
+    background: var(--light-pink);
+    border-radius: 10px;
+    display: inline-block;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(232, 90, 90, 0.1);
+}
+
+/* Make date more visible */
+.certifications .date {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.7rem 1.2rem;
+    background: var(--light-pink);
+    border-radius: 10px;
+    display: inline-block;
+    border-left: 4px solid var(--primary);
+    margin: 0.5rem 0;
+}
+
+/* Make credential ID stand out */
+.certifications .credential {
+    color: var(--text-dark);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1rem 1.2rem;
+    background: var(--light-pink);
+    border-radius: 10px;
+    margin: 1rem 0;
+    border: 2px dashed var(--primary);
+    display: block;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(232, 90, 90, 0.1);
+}
+
+/* Add label for credential ID */
+.certifications .credential::before {
+    content: 'Credential ID:';
+    display: block;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Add hover effect for better interaction */
+.certifications .credential:hover,
+.certifications .issuer:hover,
+.certifications .date:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 90, 90, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Add spacing between elements */
+.certifications .card-body > * {
+    margin-bottom: 1rem;
+}
+
+/* Make verify button more prominent */
+.certifications .verify-btn {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    background: var(--gradient);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(232, 90, 90, 0.2);
+}
+
+/* Make certification cards more compact */
+.certifications .achievement-card {
+    min-height: 240px;
+    max-width: 320px;
+}
+
+/* Reduce header size */
+.certifications .card-header {
+    padding: 1rem;
+}
+
+.certifications .card-header i {
+    font-size: 1.4rem;
+    padding: 0.6rem;
+}
+
+.certifications .card-header h3 {
+    font-size: 1.1rem;
+}
+
+/* Make card body more compact */
+.certifications .card-body {
+    padding: 1rem;
+    gap: 0.6rem;
+}
+
+/* Adjust text elements */
+.certifications .issuer {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.certifications .date {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    margin: 0.3rem 0;
+}
+
+.certifications .credential {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+    margin: 0.6rem 0;
+}
+
+/* Make tags more compact */
+.certifications .tags {
+    padding: 0.6rem;
+    gap: 0.4rem;
+}
+
+.certifications .tags span {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+}
+
+/* Adjust verify button */
+.certifications .verify-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .certifications .achievement-card {
+        max-width: 100%;
+    }
+    
+    .certifications .card-header {
+        padding: 0.8rem;
+    }
+    
+    .certifications .card-body {
+        padding: 0.8rem;
+    }
+}
+
+/* Hackathons & Awards section layout */
+.hackathons .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Wider card design for hackathons */
+.hackathons .achievement-card {
+    min-height: 220px;
+    max-width: 450px;  /* Increased from 300px */
+    background: white;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjust header for wider cards */
+.hackathons .card-header {
+    padding: 1.2rem 1.5rem;
+}
+
+.hackathons .card-header i {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+}
+
+.hackathons .card-header h3 {
+    font-size: 1.2rem;
+}
+
+/* Adjust body padding for wider cards */
+.hackathons .card-body {
+    padding: 1.5rem;
+    gap: 0.8rem;
+}
+
+/* Adjust text sizes for wider cards */
+.hackathons .issuer {
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+}
+
+.hackathons .date {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.hackathons .description {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+}
+
+/* Adjust tags for wider layout */
+.hackathons .tags {
+    padding: 0.8rem;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+}
+
+.hackathons .tags span {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .hackathons .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    }
+    
+    .hackathons .achievement-card {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hackathons .achievement-card {
+        max-width: 100%;
+    }
+}
+
+/* Specific styles for IndiaAI Fellowship card */
+.hackathons .achievement-card:last-child {
+    min-height: 220px;
+    max-width: 450px;
+}
+
+.hackathons .achievement-card:last-child .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hackathons .achievement-card:last-child .date {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.8rem 1.2rem;
+    background: var(--light-pink);
+    border-radius: 10px;
+    display: inline-block;
+    border-left: 4px solid var(--primary);
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(232, 90, 90, 0.1);
+}
+
+.hackathons .achievement-card:last-child .description {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 600;
+    padding: 1rem 1.2rem;
+    background: var(--light-pink);
+    border-radius: 10px;
+    margin: 0.8rem 0;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 2px 8px rgba(232, 90, 90, 0.1);
+}
+
+/* Add hover effects */
+.hackathons .achievement-card:last-child .date:hover,
+.hackathons .achievement-card:last-child .description:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 90, 90, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Add divider between elements */
+.hackathons .achievement-card:last-child .card-body > *:not(:last-child) {
+    border-bottom: 1px solid rgba(232, 90, 90, 0.1);
+    padding-bottom: 1rem;
+}
+
+/* Smart India Hackathon card specific styles */
+.hackathons .achievement-card:first-child .issuer {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.8rem 1.2rem;
+    background: var(--light-pink);
+    border-radius: 10px;
+    display: inline-block;
+    border-left: 4px solid var(--primary);
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(232, 90, 90, 0.1);
+}
+
+.hackathons .achievement-card:first-child .date {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.7rem 1.2rem;
+    background: var(--light-pink);
+    border-radius: 10px;
+    display: inline-block;
+    border-left: 4px solid var(--primary);
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(232, 90, 90, 0.1);
+}
+
+/* Add hover effects */
+.hackathons .achievement-card:first-child .issuer:hover,
+.hackathons .achievement-card:first-child .date:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 90, 90, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Add spacing between elements */
+.hackathons .achievement-card:first-child .card-body > * {
+    margin-bottom: 0.8rem;
+}
+
+/* Add divider between elements */
+.hackathons .achievement-card:first-child .card-body > *:not(:last-child) {
+    border-bottom: 1px solid rgba(232, 90, 90, 0.1);
+    padding-bottom: 1rem;
+}
+
+/* Achievement list styling */
+.achievement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievement-item {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    background: white;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-light);
+    animation: fadeIn 0.6s ease-out forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(240, 128, 128, 0.15);
+    border-color: var(--primary);
+}
+
+.achievement-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(240, 128, 128, 0.05),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.achievement-item:hover::before {
+    transform: translateX(100%);
+}
+
+/* Title styling */
+.achievement-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.achievement-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+/* Meta information styling */
+.meta-info {
+    font-size: 1rem;
+    color: var(--text-primary);
+    background: linear-gradient(
+        120deg,
+        var(--secondary),
+        var(--secondary-light)
+    );
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    margin: 0.8rem 0;
+    position: relative;
+    border-left: 4px solid var(--primary);
+}
+
+/* Skills tags */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1rem 0;
+}
+
+.skill-tag {
+    font-size: 0.85rem;
+    color: white;
+    background: var(--gradient);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(240, 128, 128, 0.2);
+}
+
+.skill-tag::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.skill-tag:hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    background: var(--primary-light);
+}
+
+/* Links styling */
+.credential-link {
+    display: inline-block;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.credential-link:hover {
+    background: var(--gradient);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Emoji styling */
+.emoji {
+    margin-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .achievements-page {
+        padding: 60px 15px;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .achievement-item {
+        padding: 1.2rem;
+    }
+
+    .skills {
+        gap: 0.4rem;
+    }
+}
+
+/* Enhanced animations */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced page transitions */
+.achievements-page section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: sectionFadeIn 0.8s ease forwards;
+}
+
+@keyframes sectionFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation delays for list items */
+.achievement-item {
+    opacity: 0;
+    animation: itemFadeIn 0.6s ease forwards;
+}
+
+.achievement-list > *:nth-child(1) { animation-delay: 0.1s; }
+.achievement-list > *:nth-child(2) { animation-delay: 0.2s; }
+.achievement-list > *:nth-child(3) { animation-delay: 0.3s; }
+.achievement-list > *:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes itemFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Publication link styling */
+.publication-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.publication-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(240, 128, 128, 0.2);
+    opacity: 0.95;
+}
+
+.publication-link i {
+    font-size: 0.9rem;
+} 
